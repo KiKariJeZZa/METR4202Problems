@@ -19,12 +19,12 @@ def FKinSpace(M, Slist, thetalist):
         T5 = expm(S5*thetalist[4])
         T6 = expm(S6*thetalist[5])
         #Return the final transformation
-        T11 = np.dot(T1,T2)
-        T22 = np.dot(T11,T3)
-        T33 = np.dot(T22,T4)
-        T44 = np.dot(T33,T5)
-        T55 = np.dot(T44,T6)
-        return np.dot(T55, M)
+        T11 = np.matmul(T1,T2)
+        T22 = np.matmul(T11,T3)
+        T33 = np.matmul(T22,T4)
+        T44 = np.matmul(T33,T5)
+        T55 = np.matmul(T44,T6)
+        return np.matmul(T55, M)
         
         
 
@@ -45,12 +45,12 @@ def FKinBody(M, Blist, thetalist):
         T5 = expm(B5*thetalist[4])
         T6 = expm(B6*thetalist[5])
         # Calculate and return the final transformation
-        T11 = np.dot(T1,T2)
-        T22 = np.dot(T11,T3)
-        T33 = np.dot(T22,T4)
-        T44 = np.dot(T33,T5)
-        T55 = np.dot(T44,T6)
-        return np.dot(T55, M)
+        T11 = np.matmul(T1,T2)
+        T22 = np.matmul(T11,T3)
+        T33 = np.matmul(T22,T4)
+        T44 = np.matmul(T33,T5)
+        T55 = np.matmul(T44,T6)
+        return np.matmul(T55, M)
 
 # Make the matrices
 M = [[1, 0, 0, 0],
